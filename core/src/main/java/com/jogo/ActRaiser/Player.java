@@ -1,6 +1,6 @@
 package com.jogo.ActRaiser;
 
-public class Player extends Entidades{
+public class Player extends Entidade{
 
     @Override
     public void mover(float posicaoX, float posicaoY, float velocidadeX, float velocidadeY) {

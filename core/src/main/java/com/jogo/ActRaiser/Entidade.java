@@ -1,6 +1,6 @@
 package com.jogo.ActRaiser;
 
-public abstract class Entidades extends Movel{
+public abstract class Entidade extends Movel{
     private int pontosVida, pontosMagia, pontosDano;
 
     public int getPontosVida() {
