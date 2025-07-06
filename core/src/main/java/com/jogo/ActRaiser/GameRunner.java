@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameRunner extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
+    private Player player = new Player();
+    private Inimigo inimigo = new Inimigo();
 
     @Override
     public void create() {
@@ -23,6 +25,9 @@ public class GameRunner extends ApplicationAdapter {
         batch.begin();
         batch.draw(image, 140, 210);
         batch.end();
+        
+        player.mover(0, 0, 0, 0);
+        inimigo.mover(0, 0, 0, 0, player);
     }
 
     @Override
