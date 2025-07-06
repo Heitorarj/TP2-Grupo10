@@ -1,7 +1,18 @@
 package com.jogo.ActRaiser.modelo;
 
-public abstract class Entidade extends Movel{
-    private int pontosVida, pontosMagia, pontosDano;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.Rectangle;
+
+public abstract class Entidade extends Movel {
+    protected final int pontosVida, pontosMagia, pontosDano;
+
+    public Entidade(float posicaoX, float posicaoY, float velocidadeX, float velocidadeY, Texture texture,
+            Rectangle hitbox, int pontosVida, int pontosMagia, int pontosDano) {
+        super(posicaoX, posicaoY, velocidadeX, velocidadeY, texture, hitbox);
+        this.pontosVida = pontosVida;
+        this.pontosMagia = pontosMagia;
+        this.pontosDano = pontosDano;
+    }
 
     public int getPontosVida() {
         return pontosVida;
@@ -15,23 +26,13 @@ public abstract class Entidade extends Movel{
         return pontosDano;
     }
 
-    public void adicionaPontosVida(int pontosVida){
-        this.pontosVida += pontosVida;
-    }
+    public abstract void adicionaPontosVida(int pontosVida);
 
-    public void removePontosVida(int pontosDano){
-        this.pontosVida -= pontosDano;
-    }
+    public abstract void removePontosVida(int pontosDano);
 
-    public void adicionaPontosMagia(int pontosMagia){
-        this.pontosMagia += pontosMagia;
-    }
-    
-    public void removePontosMagia(int pontosMagia){
-        this.pontosMagia -= pontosMagia;
-    }
+    public abstract void adicionaPontosMagia(int pontosMagia);
 
-    public void adicionaPontosDano(int pontosDano){
-        this.pontosDano += pontosDano;
-    }
+    public abstract void removePontosMagia(int pontosMagia);
+
+    public abstract void adicionaPontosDano(int pontosDano);
 }

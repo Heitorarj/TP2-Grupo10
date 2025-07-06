@@ -1,30 +1,40 @@
 package com.jogo.ActRaiser.modelo;
 
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 
 public abstract class Movel {
-    protected float posicaoX, posicaoY, velocidadeX, velocidadeY;
-    protected TextureRegion texture;
-    protected Rectangle hitbox;
+    protected final float posicaoX, posicaoY, velocidadeX, velocidadeY;
+    protected final Texture texture;
+    protected final Rectangle hitbox;
+
+    public Movel(float posicaoX, float posicaoY, float velocidadeX, float velocidadeY, Texture texture,
+            Rectangle hitbox) {
+        this.posicaoX = posicaoX;
+        this.posicaoY = posicaoY;
+        this.velocidadeX = velocidadeX;
+        this.velocidadeY = velocidadeY;
+        this.texture = texture;
+        this.hitbox = hitbox;
+    }
 
     public float getPosicaoX() {
         return posicaoX;
     }
-    
+
     public float getPosicaoY() {
         return posicaoY;
     }
-    
+
     public float getVelocidadeX() {
         return velocidadeX;
     }
-    
+
     public float getVelocidadeY() {
         return velocidadeY;
     }
-    
-    public TextureRegion getTexture() {
+
+    public Texture getTexture() {
         return texture;
     }
 
