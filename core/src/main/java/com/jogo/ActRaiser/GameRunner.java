@@ -19,7 +19,6 @@ public class GameRunner extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.end();
-        
     }
 
     @Override
