@@ -1,10 +1,10 @@
-package com.jogo.ActRaiser.modelo;
+package com.jogo.ActRaiser.modelos.inimigos;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.jogo.ActRaiser.interfaces.Builder;
 
-public class PlayerBuilder implements Builder {
+public class MorcegoBuilder implements Builder{
     protected float posicaoX, posicaoY, velocidadeX, velocidadeY;
     protected int pontosVida, pontosMagia, pontosDano;
     protected Texture texture;
@@ -38,7 +38,8 @@ public class PlayerBuilder implements Builder {
         this.hitbox = hitbox;
     }
 
-    public Player buildPlayer(){
-        return new Player(posicaoX, posicaoY, velocidadeX, velocidadeY, texture, hitbox, pontosVida, pontosMagia, pontosDano);
+    public Morcego buildMorcego(){
+        return new Morcego(posicaoX, posicaoY, velocidadeX, velocidadeY, texture, hitbox, pontosVida, pontosMagia, pontosDano);
     }
+
 }

@@ -1,11 +1,12 @@
-package com.jogo.ActRaiser.modelo;
+package com.jogo.ActRaiser.modelos.player;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
+import com.jogo.ActRaiser.modelos.Entidade;
 
-public class Inimigo extends Entidade{
+public class Player extends Entidade{
 
-    public Inimigo(float posicaoX, float posicaoY, float velocidadeX, float velocidadeY, Texture texture,
+    public Player(float posicaoX, float posicaoY, float velocidadeX, float velocidadeY, Texture texture,
             Rectangle hitbox, int pontosVida, int pontosMagia, int pontosDano) {
         super(posicaoX, posicaoY, velocidadeX, velocidadeY, texture, hitbox, pontosVida, pontosMagia, pontosDano);
         //TODO Auto-generated constructor stub
@@ -14,7 +15,7 @@ public class Inimigo extends Entidade{
     @Override
     public void mover() {
         // TODO Auto-generated method stub
-        System.out.println("TesteInimigo");
+        System.out.println("TestePlayer");
     }
 
     @Override

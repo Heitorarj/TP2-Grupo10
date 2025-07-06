@@ -1,4 +1,4 @@
-package com.jogo.ActRaiser.modelo;
+package com.jogo.ActRaiser.modelos;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
