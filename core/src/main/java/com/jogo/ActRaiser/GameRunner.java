@@ -1,45 +1,37 @@
 package com.jogo.ActRaiser;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.jogo.ActRaiser.modelos.inimigos.Morcego;
-import com.jogo.ActRaiser.modelos.inimigos.MorcegoBuilder;
-import com.jogo.ActRaiser.modelos.player.Player;
-import com.jogo.ActRaiser.modelos.player.PlayerBuilder;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.jogo.ActRaiser.screens.MainMenuScreen;
 
-public class GameRunner extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Director director = new Director();
-    private PlayerBuilder playerBuilder = new PlayerBuilder();
-    private Player player;
-    private MorcegoBuilder morcegoBuilder = new MorcegoBuilder();
-    private Morcego morcego;
+public class GameRunner extends Game {
+    public SpriteBatch batch;
+    public BitmapFont font;
+    public FitViewport viewport;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
+        font = new BitmapFont();
+        viewport = new FitViewport(8, 5);
 
-        director.constructorPlayer(playerBuilder);
-        player = playerBuilder.buildPlayer();
+        font.setUseIntegerPositions(false);
+        font.getData().setScale(viewport.getWorldHeight() / Gdx.graphics.getHeight());
 
-        director.constructorMorcego(morcegoBuilder);
-        morcego = morcegoBuilder.buildMorcego();
+        this.setScreen(new MainMenuScreen(this));
     }
 
     @Override
     public void render() {
-        Gdx.gl.glClearColor(0, 0, 1, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
-        batch.draw(player.getTexture(), player.getPosicaoX(), player.getPosicaoY());
-        batch.draw(morcego.getTexture(), morcego.getPosicaoX(), morcego.getPosicaoY());
-        batch.end();
+        super.render();
     }
 
     @Override
     public void dispose() {
         batch.dispose();
+        font.dispose();
     }
 }
